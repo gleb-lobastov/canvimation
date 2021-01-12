@@ -1,0 +1,47 @@
+{
+  "name": "canvimation",
+  "version": "0.0.1",
+  "description": "A simple library to make interactive animation on html5 canvas element",
+  "main": "dist/Canvimation.cjs.js",
+  "module": "dist/Canvimation.esm.js",
+  "browser": "dist/Canvimation.umd.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "test": "jest",
+    "release:patch": "npm run build && npm test && npm version minor && npm publish",
+    "release": "npm run build && npm test && npm version minor && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gleb-lobastov/canvimation.git"
+  },
+  "keywords": [
+    "canvas",
+    "play",
+    "tick",
+    "animation",
+    "game"
+  ],
+  "author": "Gleb Lobastov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gleb-lobastov/canvimation/issues"
+  },
+  "homepage": "https://github.com/gleb-lobastov/canvimation#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "prettier": "^2.2.1",
+    "rollup": "^2.36.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
+  }
+}
